@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+package gRPCStream.Protocol;
+
+service RpcStreamService{
+	rpc GetStreamContent(stream StreamRequest) returns (stream StreamResponse){}
+}
+
+message StreamRequest{
+	bytes Request = 1;
+}
+
+message StreamResponse{
+	bytes Response = 1;
+}
